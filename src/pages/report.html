@@ -29,16 +29,26 @@
   </header>
 
   <main>
-    <div class="upload-container">
-      <h1>Denuncie - Aqui</h1>
-      <label for="file" class="file-input">
-        <div class="drop-zone">
-          <img class="upload" src="../assets/svg/upload.svg" alt="Ícone de Upload" />
-          <p><b>Selecione uma imagem</b> ou solte aqui.</p>
-        </div>
-        <input type="file" id="file" accept="image/*" />
-      </label>
-    </div>
+    <section class="main">
+      <div class="upload-container">
+        <h1>Denuncie - Aqui</h1>
+        <label for="file" class="file-input">
+          <div class="drop-zone">
+            <img class="upload" src="../assets/svg/upload.svg" alt="Ícone de Upload" />
+            <p><span class="bold">Selecione uma imagem</span> ou solte aqui.</p>
+          </div>
+          <input type="file" id="file" accept="image/*" />
+        </label>
+      </div>
+  
+      <form class="form-container">
+        <input class="name-input" type="text" placeholder="Nome completo:" required />
+        <input class="email-input" type="email" placeholder="E-mail:" required />
+        <input class="location-input" type="text" placeholder="Localização da denúncia" required />
+        <input class="description-input" type="text" placeholder="Descrição" required />
+        <button>Denunciar</button>
+      </form>
+    </section>
   </main>
   <script src="../scripts/report-drop.js"></script>
 </body>

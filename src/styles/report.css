@@ -2,6 +2,41 @@ main {
   width: 100%;
   height: calc(100vh - 70px);
   background-color: var(--dark-green);
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+.main {
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main > * {
+  height: 100%;
+  width: 45%;
+}
+
+/*========== UPLOAD CONTAINER ==========*/
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.upload-container > h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--light-green);
 }
 
 /*========== UPLOAD SECTION ==========*/
@@ -10,8 +45,8 @@ main {
   display: grid;
   grid-template-areas: "stack";
   
-  width: 400px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   
   background-color: #eee;
   border-radius: 8px;
@@ -27,7 +62,7 @@ main {
 
 .file-input.active > .drop-zone {
   margin: 14px;
-  background-color: #19335a;
+  background-color: #d8ef9fe5;
 }
 
 .drop-zone {
@@ -52,6 +87,11 @@ main {
 .drop-zone > p {
   z-index: 99;
   text-shadow: rgba(18, 18, 18, 0.5) 1px 0 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--dark-green);
 }
 
 .drop-zone #cover {
@@ -66,4 +106,43 @@ main {
 
 .file-input:hover .drop-zone #cover {
   opacity: .1;
+}
+
+/*========== FORM SECTION ==========*/
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-container > input {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  width: 90%;
+  padding: 15px 12px;
+  border-radius: 15px;
+  border: none;
+}
+
+.form-container > button {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--dark-green);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.form-container > button:hover {
+  box-shadow: 0px 0px 10px 0px #d8ef9f94;
 }
