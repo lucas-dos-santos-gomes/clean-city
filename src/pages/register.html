@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../styles/reset.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/login.css">
-  <title>Login - Clean City</title>
+  <title>Cadastrar - Clean City</title>
 </head>
 <body>
   <header>
@@ -59,14 +59,16 @@
     </nav>
   </div>
 
-  <main class="main">
-    <h1>Faça seu login</h1>
-    <form>
+  <main class="main register">
+    <h1>Faça seu cadastro</h1>
+    <form class="register">
+      <input type="text" placeholder="Nome completo:" required />
       <input type="email" placeholder="E-mail:" required />
       <input type="password" placeholder="Senha:" required />
+      <input type="confirm-password" placeholder="Confirmar senha:" required />
       <div class="buttons-container">
-        <button>Entrar</button>
-        <a href="./register.html">Criar Conta</a>
+        <button>Registrar</button>
+        <a href="./login.html">Entrar em uma Conta</a>
       </div>
     </form>
   </main>
