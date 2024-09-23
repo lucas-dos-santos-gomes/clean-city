@@ -302,6 +302,11 @@
   align-items: center;
   gap: 7px;
   color: var(--dark-green);
+  transition: .2s transform;
+}
+
+.footer-info > .footer-nav > a:hover {
+  transform: scale(1.03);
 }
 
 .footer-info > .copyright {

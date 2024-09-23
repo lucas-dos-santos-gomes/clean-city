@@ -40,9 +40,35 @@ header {
 }
 
 .header-nav > a {
+  position: relative;
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   color: var(--dark-green);
+}
+
+.header-nav > a:not(.login-link):after {
+  position: absolute;
+  bottom: -5px;
+  left: 1px;
+  content: " ";
+  width: 0;
+  height: 2px;
+  background-color: #203500b6;
+  transition: 0.4s;
+}
+
+.header-nav > a:hover::after {
+  width: 99%;
+}
+
+.login-link > img {
+  border-radius: 50px;
+  transition: .2s;
+}
+
+.login-link > img:hover {
+  outline: 1px solid var(--dark-green); /* Define a borda ao passar o mouse */
+  border-radius: 50px; /* Define o raio da borda arredondada ao passar o mouse */
 }
