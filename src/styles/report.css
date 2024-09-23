@@ -1,8 +1,8 @@
 main {
   width: 100%;
-  height: calc(100vh - 70px);
+  height: 100vh;
   background-color: var(--dark-green);
-  padding: 30px 50px;
+  padding: 100px 50px 30px;
   box-sizing: border-box;
 }
 
@@ -81,11 +81,11 @@ main {
 
 .drop-zone > .upload {
   width: 40px;
-  z-index: 99;
+  z-index: 5;
 }
 
 .drop-zone > p {
-  z-index: 99;
+  z-index: 5;
   text-shadow: rgba(18, 18, 18, 0.5) 1px 0 20px;
   font-family: "Lato", sans-serif;
   font-weight: 500;

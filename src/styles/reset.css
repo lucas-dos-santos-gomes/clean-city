@@ -19,6 +19,14 @@
 	color: var(--grass-green);
 }
 
+.none {
+	display: none;
+}
+
+html {
+	min-width: 280px;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

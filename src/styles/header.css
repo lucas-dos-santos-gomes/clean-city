@@ -4,10 +4,8 @@ header {
   padding: 0 50px;
   box-sizing: border-box;
   box-shadow: 0px 0px 7px 0px var(--dark-green);
-}
-
-.fixed {
   position: fixed;
+  z-index: 99;
 }
 
 .header-container {
@@ -39,7 +37,7 @@ header {
   gap: clamp(15px, 4vw, 60px);
 }
 
-.header-nav > a {
+.header-nav > a, .hamburguer-nav_list a {
   position: relative;
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -71,4 +69,78 @@ header {
 .login-link > img:hover {
   outline: 1px solid var(--dark-green); /* Define a borda ao passar o mouse */
   border-radius: 50px; /* Define o raio da borda arredondada ao passar o mouse */
+}
+
+.hamburguer-menu, .hamburguer-menu-container {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .header-nav {
+    display: none;
+  }
+
+  .hamburguer-menu {
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    margin: auto 0;
+    box-sizing: border-box;
+    padding-block: 5px;
+  }
+
+  .menu-streak {
+    width: 40px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: var(--grass-green);
+    transition: .3s;
+  }
+
+  #x-menu:checked + .hamburguer-menu > .menu-streak:first-child {
+    transform: translateY(12px) rotate(45deg);
+  }
+
+  #x-menu:checked + .hamburguer-menu > .menu-streak:nth-child(2) {
+    opacity: 0;
+  }
+
+  #x-menu:checked + .hamburguer-menu > .menu-streak:last-child {
+    transform: translateY(-12px) rotate(135deg);
+  }
+
+  .hamburguer-menu-container {
+    display: initial;
+  }
+
+  .hamburguer-nav {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: var(--header-green);
+    transform: translateY(-100vh);
+    transition: transform .5s;
+  }
+
+  .hamburguer-nav_list {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo-title {
+    display: none;
+  }
 }

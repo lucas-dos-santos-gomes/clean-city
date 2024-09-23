@@ -6,8 +6,8 @@
   gap: 50px;
 
   width: 100%;
-  padding: 30px 50px;
-  height: calc(100vh - 70px);
+  padding: 100px 50px 30px;
+  height: 100vh;
   background-color: var(--light-green);
   box-sizing: border-box;
 }
