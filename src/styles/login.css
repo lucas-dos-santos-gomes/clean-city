@@ -80,3 +80,15 @@
   margin: 20px 0 0;
   color: var(--grass-green);
 }
+
+@media screen and (max-width: 499px) {
+  .main {
+    padding-inline: 20px;
+  }
+  .main > h1 {
+    font-size: 30px;
+  }
+  .main > form {
+    padding: 40px 30px;
+  }
+}
