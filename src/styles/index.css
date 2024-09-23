@@ -1,0 +1,80 @@
+.start {
+  background-color: var(--dark-green);
+  width: 100%;
+  min-height: 100vh;
+  padding: 70px 50px 0;
+  box-sizing: border-box;
+}
+
+.start img {
+  width: 100%;
+}
+
+.start-container {
+  display: flex;
+  gap: 10%;
+  height: calc(100vh - 70px);
+  max-width: 1100px;
+  padding: 10vh 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.start-container > div {
+  width: 45%;
+}
+
+.start-container > .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--light-green);
+}
+
+.start-container > .text-container > h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.start-container > .text-container > p {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #d8ef9fc2;
+}
+
+
+.start-container > .text-container > a {
+  align-self: center;
+}
+
+.start-container > .text-container button {
+  border: none;
+  border-radius: 7px;
+  padding: 15px 35px;
+  background-color: var(--grass-green);
+  color: var(--light-green);
+  cursor: pointer;
+  transition: .2s ease-in;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.start-container > .text-container button:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 7px 0px #d8ef9f94;
+}
+
+.start-container > .image-container {
+  display: flex;
+  align-items: center;
+}
