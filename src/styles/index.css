@@ -29,7 +29,8 @@
 .start-container > .text-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5vh;
   color: var(--light-green);
 }
 
@@ -293,7 +294,9 @@
 .footer-info > .footer-nav {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  column-gap: 25px;
+  row-gap: 12px;
   margin-bottom: 12px;
 }
 
@@ -312,4 +315,85 @@
 .footer-info > .copyright {
   color: #423C3C;
   font-size: 12px;
+}
+
+@media screen and (min-height: 800px) {
+  .start, .who-we-are, .where-we-operate {
+    min-height: auto;
+    max-height: 800px;
+  }
+  .start-container, .who-we-are-container, .where-we-operate-container {
+    height: auto;
+    max-height: 730px;
+  }
+  .where-we-operate-container {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .start, .where-we-operate {
+    min-height: auto;
+  }
+  .start-container {
+    justify-content: center;
+    height: auto;
+  }
+  .start-container > .text-container {
+    gap: 30px;
+    width: 100%;
+  }
+  .start-container > .image-container {
+    display: none;
+  }
+
+  .where-we-operate-container {
+    height: auto;
+    padding: 40px 0;
+    gap: 20px;
+  }
+  .where-we-operate-container > .location-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .where-we-operate-container > .location-container > .cities-container > ul {
+    gap: 10px;
+  }
+  .where-we-operate-container > .location-container > img {
+    width: clamp(200px, 50vw, 900px);
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .who-we-are {
+    min-height: auto;
+  }
+  .who-we-are-container {
+    justify-content: center;
+    height: auto;
+    padding: 30px 0 0;
+  }
+  .who-we-are-container > .text-container {
+    width: 100%;
+  }
+  .who-we-are-container > .image-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .start, .who-we-are, .where-we-operate, .footer-text, .footer-info {
+    padding-inline: 20px;
+  }
+  .where-we-operate-container > .location-container > .cities-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .where-we-operate-container > .location-container > .cities-container > ul {
+    gap: 15px;
+  }
+  .where-we-operate-container > .location-container > .cities-container > .vertical-division {
+    display: none;
+  }
 }
