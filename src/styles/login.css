@@ -1,0 +1,82 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  width: 100%;
+  padding: 30px 50px;
+  height: calc(100vh - 70px);
+  background-color: var(--light-green);
+  box-sizing: border-box;
+}
+
+.main > h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 40px;
+  color: var(--dark-green);
+}
+
+.main > form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: var(--dark-green);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.main > form > input {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+}
+
+.main > form > .buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main > form > .buttons-container > button {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--dark-green);
+  background-color: var(--light-green);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out;
+}
+
+.main > form > .buttons-container > button:hover {
+  box-shadow: 0px 0px 10px 0px #d8ef9f94;
+}
+
+.main > form > .buttons-container > a {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  margin: 20px 0 0;
+  color: var(--grass-green);
+}
