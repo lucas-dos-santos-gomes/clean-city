@@ -160,10 +160,6 @@ main {
     width: 100%;
   }
 
-  .file-input {
-    width: 200px;
-    height: 200px;
-  }
   .file-input p {
     text-align: center;
     padding: 0 10px;
@@ -177,5 +173,18 @@ main {
 @media screen and (max-width: 499px) {
   main {
     padding-inline: 20px;
+  }
+  
+  .upload-container > h1 {
+    font-size: 30px;
+  }
+
+  .file-input {
+    width: 200px;
+    height: 200px;
+  }
+
+  #file {
+    width: 100%;
   }
 }
