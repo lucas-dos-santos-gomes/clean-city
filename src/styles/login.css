@@ -7,7 +7,7 @@
 
   width: 100%;
   padding: 100px 50px 30px;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--light-green);
   box-sizing: border-box;
 }

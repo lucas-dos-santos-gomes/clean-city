@@ -11,6 +11,7 @@ header {
 .header-container {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   max-width: 1100px;
   padding: 10px 0;
@@ -59,6 +60,11 @@ header {
 
 .header-nav > a:hover::after {
   width: 99%;
+}
+
+.hamburguer-nav_list_item:first-child {
+  display: flex;
+  justify-content: center;
 }
 
 .login-link > img {
@@ -121,12 +127,12 @@ header {
     place-items: center;
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     top: 0;
     left: 0;
     z-index: 9;
     background-color: var(--header-green);
-    transform: translateY(-100vh);
+    transform: translateY(-100dvh);
     transition: transform .5s;
   }
 
