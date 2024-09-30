@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/login.css">
   <title>Cadastre-se</title>
+  <script src="../scripts/config.js" type="module"></script>
 </head>
 <body>
   <header>
@@ -66,10 +67,10 @@
   <main class="main register">
     <h1>Faça seu cadastro</h1>
     <form class="register">
-      <input type="text" placeholder="Nome completo:" required />
-      <input type="email" placeholder="E-mail:" required />
-      <input type="password" placeholder="Senha:" required />
-      <input type="confirm-password" placeholder="Confirmar senha:" required />
+      <input type="text" id="name" placeholder="Nome completo:" required />
+      <input type="email" id="email" placeholder="E-mail:" required />
+      <input type="password" id="password" placeholder="Senha:" required />
+      <input type="password" placeholder="Confirmar senha:" required />
       <div class="buttons-container">
         <button>Registrar</button>
         <a href="./login.html">Entrar em uma Conta</a>
@@ -77,5 +78,6 @@
     </form>
   </main>
   <script src="../scripts/hamburguer-menu.js"></script>
+  <script type="module" src="../scripts/register.js"></script>
 </body>
 </html>
