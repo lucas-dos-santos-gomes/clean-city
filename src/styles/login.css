@@ -73,6 +73,12 @@
   border-radius: 10px;
   cursor: pointer;
   transition: box-shadow .2s ease-in-out;
+  transition: opacity .2s;
+}
+
+.main > form > .buttons-container > button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .main > form > .buttons-container > button:hover {
