@@ -28,6 +28,7 @@ main {
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  padding-bottom: 20px;
 }
 
 .profile-info {
@@ -59,6 +60,7 @@ main {
   margin-bottom: 20px;
   font-size: 20px;
   text-align: center;
+  box-sizing: border-box;
 
   background-color: #FFF;
   color: var(--dark-green);
@@ -80,6 +82,7 @@ main {
   padding: 10px 15px;
   cursor: pointer;
   transition: transform .2s;
+  margin-top: 10px;
 }
 
 .logout:hover {
@@ -88,4 +91,60 @@ main {
 
 .logout > img {
   width: 25px;
+}
+
+.reports {
+  width: 90%;
+  max-width: 700px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  text-align: center;
+}
+
+table {
+  font-family: "Baloo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  width: 100%;
+  font-size: 14px;
+}
+
+th {
+  border: 2px solid #000;
+  background-color: var(--dark-green);
+  color: #FFF;
+}
+
+th:not(:last-child), td:not(:last-child) {
+  border-right: 0;
+}
+
+th:first-child {
+  width: 10%;
+}
+
+th:nth-child(2) {
+  width: 30%;
+}
+
+th:nth-child(3) {
+  width: 40%;
+}
+
+th:last-child {
+  width:20%;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  border: 2px solid #000;
+  border-top: 0;
+  text-align: center;
+  vertical-align: middle;
 }
