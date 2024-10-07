@@ -31,6 +31,7 @@ const logoutButton = document.querySelector('.logout');
 function logout() {
   sessionStorage.removeItem('user-info');
   sessionStorage.removeItem('user-creds');
+  alert('Você saiu da sua conta!');
   window.location.href = '/src/pages/login.html';
 }
 
