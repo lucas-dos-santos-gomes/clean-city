@@ -31,10 +31,22 @@ const form = document.querySelector('form');
 form.onsubmit = e => {
   e.preventDefault();
   const uid = JSON.parse(sessionStorage.getItem('user-creds')).uid;
-  set(ref(db, 'usuarios/' + uid + '/reports/'), {
-    id: gerarIdAleatorio(),
+
+  const now = new Date();
+  const nowInSaoPaulo = new Date(now.toLocaleString('pt-BR', 'America/Sao_Paulo'));
+  const formattedDate = nowInSaoPaulo.toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+
+  set(ref(db, `users/${uid}/reports/${gerarIdAleatorio()}`), {
     location: locationInput.value.trim(),
-    email: descriptionInput.value.trim(),
+    description: descriptionInput.value.trim(),
+    date: formattedDate,
   }).then(() => {
     alert('Denuncia feita com sucesso!'); 
     window.location.href = '/src/pages/report.html';
@@ -44,7 +56,7 @@ form.onsubmit = e => {
 function gerarIdAleatorio() {
   var caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   var idAleatorio = "";
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 20; i++) {
     idAleatorio += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
   }
   return idAleatorio;

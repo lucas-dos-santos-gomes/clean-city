@@ -23,18 +23,19 @@ const btn = document.querySelector("button");
 form.onsubmit = e => {
   e.preventDefault();
   btn.setAttribute('disabled', true);
-  createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value).then(credentials => {
-    set(ref(db, 'usuarios/' + credentials.user.uid), {
+  createUserWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value).then(credentials => {
+    set(ref(db, 'users/' + credentials.user.uid), {
       name: nameInput.value.trim(),
       email: emailInput.value.trim(),
+      password: passwordInput.value,
+      admin: false,
     });
-    console.log(credentials);
     btn.removeAttribute('disabled');
     alert('Cadastro realizado com sucesso!');
     window.location.href = '/src/pages/login.html';
   }).catch(error => {
     alert("Não foi posssível fazer o cadastro.");
-    console.log(error.code);
+    console.log(error);
     console.log(error.message);
     btn.removeAttribute('disabled');
 });

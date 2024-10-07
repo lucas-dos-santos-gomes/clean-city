@@ -23,22 +23,24 @@ form.onsubmit = e => {
   e.preventDefault();
   btn.setAttribute('disabled', true);
   signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value).then(credentials => {
-    get(child(dbref, 'usuarios/' + credentials.user.uid)).then(snapshot => {
+    get(child(dbref, 'users/' + credentials.user.uid)).then(snapshot => {
       if(snapshot.exists) {
         sessionStorage.setItem('user-info', JSON.stringify({
           name: snapshot.val().name,
           email: snapshot.val().email,
+          admin: snapshot.val().admin,
         }));
         sessionStorage.setItem('user-creds', JSON.stringify(credentials.user));
-        window.location.href = '/src/pages/report.html';
       }
     });
-    btn.setAttribute('disabled');
+    btn.removeAttribute('disabled');
     console.log(credentials);
+    alert('Login feito com sucesso!');
+    window.location.href = '/src/pages/report.html';
   }).catch(error => {
     btn.removeAttribute('disabled');
     alert("Não foi posssível fazer o login.");
-    console.log(error.code);
+    console.log(error);
     console.log(error.message);
   });
 }
