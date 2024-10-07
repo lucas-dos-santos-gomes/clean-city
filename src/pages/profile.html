@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/svg/simple-logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/profile.css">
+  <title>Meu Perfil</title>
+</head>
+<body>
+  <header class="header">
+    <a href="../../index.html">
+      <img src="../assets/svg/house.svg" alt="Retornar para a página principal" />
+    </a>
+  </header>
+  <main>
+    <div class="img-container">
+      <img src="../assets/svg/perfil.svg" alt="Perfil" />
+    </div>
+    <div class="profile-info">
+      <label for="name">Nome: </label>
+      <input type="text" id="name" disabled />
+
+      <label for="email">E-mail: </label>
+      <input type="email" id="email" disabled />
+
+      <p>Denúncias</p>
+
+      <button class="logout" type="button"><img src="../assets/svg/power-off.svg" alt="Sair da Conta" />Sair da conta</button>
+    </div>
+  </main>
+  <script type="module" src="../scripts/profile.js"></script>
+</body>
+</html>
