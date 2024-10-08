@@ -34,7 +34,6 @@ form.onsubmit = e => {
       }
     });
     btn.removeAttribute('disabled');
-    console.log(credentials);
     alert('Login feito com sucesso!');
     window.location.href = '/src/pages/report.html';
   }).catch(error => {

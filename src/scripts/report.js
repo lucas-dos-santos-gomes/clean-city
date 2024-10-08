@@ -42,11 +42,12 @@ form.onsubmit = e => {
     minute: '2-digit',
     second: '2-digit',
   });
+  const finalFormattedDate = formattedDate.replace(',', '').replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3');
 
   set(ref(db, `users/${uid}/reports/${gerarIdAleatorio()}`), {
     location: locationInput.value.trim(),
     description: descriptionInput.value.trim(),
-    date: formattedDate,
+    date: finalFormattedDate,
   }).then(() => {
     alert('Denuncia feita com sucesso!'); 
     window.location.href = '/src/pages/report.html';
