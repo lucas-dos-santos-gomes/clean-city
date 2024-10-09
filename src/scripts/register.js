@@ -1,3 +1,4 @@
+import { setLoading, resetLoading } from "./loading.js";
 import {
   db,
   set,
@@ -20,6 +21,7 @@ form.onsubmit = signup;
 
 function signup(submit) {
   submit.preventDefault();
+  setLoading();
   turnInputs(true);
 
   createUserWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value).then(async credentials => {
@@ -34,11 +36,13 @@ function signup(submit) {
 
     turnInputs();
     alert('Cadastro realizado com sucesso!');
+    resetLoading();
     window.location.href = '/src/pages/login.html';
   }).catch(error => {
     alert(authError(error.message));
     console.log(error);
     turnInputs();
+    resetLoading();
   });
 }
 
