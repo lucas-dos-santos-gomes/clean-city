@@ -10,6 +10,9 @@ import {
   signOut,
 } from "./config.js";
 
+const main = document.querySelector('main');
+const h1 = document.querySelector('h1');
+
 const form = document.querySelector("form");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -35,8 +38,14 @@ function signup(submit) {
     signOut(auth);
 
     turnInputs();
-    alert('Cadastro realizado com sucesso!');
+    main.removeChild(form);
+    h1.textContent = `Cadastro realizado com sucesso! \nRetornando ao login em 3`;
     resetLoading();
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    h1.textContent = `Cadastro realizado com sucesso! \nRetornando ao login em 2`;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    h1.textContent = `Cadastro realizado com sucesso! \nRetornando ao login em 1`;
+    await new Promise(resolve => setTimeout(resolve, 1000));
     window.location.href = '/src/pages/login.html';
   }).catch(error => {
     alert(authError(error.message));
