@@ -22,6 +22,8 @@ const submitButton = document.querySelector("button");
 
 form.onsubmit = signup;
 
+fetch('http://localhost:3000/users').then(res => res.json()).then(data => console.log(data));
+
 function signup(submit) {
   submit.preventDefault();
   setLoading();
@@ -39,6 +41,19 @@ function signup(submit) {
 
     turnInputs();
     main.removeChild(form);
+
+    await fetch('http://localhost:3000/users/673b1ddda5e291d7f5ae5699', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        password: passwordInput.value
+      })
+    }).then(res => res.json()).then(data => console.log(data));
+
     h1.textContent = `Cadastro realizado com sucesso! \nRetornando ao login em 3`;
     resetLoading();
     await new Promise(resolve => setTimeout(resolve, 1000));
