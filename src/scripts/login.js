@@ -6,13 +6,17 @@ import {
   child,
   push,
   onChildAdded,
-  createUserWithEmailAndPassword,
   auth,
   dbref,
   signInWithEmailAndPassword,
   updateProfile,
   signOut,
+  setPersistence,
+  browserLocalPersistence,
+  verifyUser,
 } from "./config.js";
+
+verifyUser();
 
 const form = document.querySelector("form");
 const emailInput = document.querySelector("#email");
@@ -22,6 +26,7 @@ const btn = document.querySelector("button");
 form.onsubmit = e => {
   e.preventDefault();
   btn.setAttribute('disabled', true);
+  setPersistence(auth, browserLocalPersistence).then(
   signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value).then(credentials => {
     get(child(dbref, 'users/' + credentials.user.uid)).then(snapshot => {
       if(snapshot.exists) {
@@ -34,7 +39,6 @@ form.onsubmit = e => {
       }
     });
     btn.removeAttribute('disabled');
-    console.log(credentials);
     alert('Login feito com sucesso!');
     window.location.href = '/src/pages/report.html';
   }).catch(error => {
@@ -42,5 +46,5 @@ form.onsubmit = e => {
     alert("Não foi posssível fazer o login.");
     console.log(error);
     console.log(error.message);
-  });
+  })).catch(err => console.log(err));
 }

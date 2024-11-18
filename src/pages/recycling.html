@@ -66,15 +66,24 @@
 
   <main class="main">
     <h1>Solicite reciclagem</h1>
-    <form>
-      <input type="text" placeholder="Nome completo:" required />
-      <input type="email" placeholder="E-mail:" required />
-      <input type="text" placeholder="Descrição:" required />
-      <div class="buttons-container">
-        <button>Enviar</button>
+    <div class="recycling-container">
+      <div class="recycling-info-container">
+        <img src="/src/assets/img/recycling.png" alt="Ícone de reciclagem" />
+        <p>Você pode solicitar uma reciclagem por vez para seu endereço. Complete as informações aqui e aguarde a aprovação.</p>
       </div>
-    </form>
+      <span class="vertical-division"></span>
+      <form>
+        <input class="cep" type="text" placeholder="CEP:" required />
+        <input class="address" type="text" placeholder="Endereço:" required />
+        <input class="complement" type="text" placeholder="Complemento:" required />
+        <input class="description" type="text" placeholder="Descrição:" required />
+        <div class="buttons-container">
+          <button>Enviar</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="../scripts/hamburguer-menu.js"></script>
+  <script type="module" src="../scripts/recycling.js"></script>
 </body>
 </html>

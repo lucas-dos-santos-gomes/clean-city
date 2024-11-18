@@ -21,36 +21,68 @@
   color: var(--dark-green);
 }
 
-.main > form {
+.main > .recycling-container {
   display: flex;
-  flex-direction: column;
-  gap: 35px;
+  gap: 20px;
   background-color: var(--header-green);
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   border-radius: 50px;
-  padding: 50px 40px;
+  padding: 40px 30px;
   box-sizing: border-box;
 }
 
-.main > form > input {
+.main > .recycling-container > .recycling-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.main > .recycling-container > .recycling-info-container > p {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.main > .recycling-container > .recycling-info-container > img {
+  width: 60%;
+  margin-inline: auto;
+}
+
+.main > .recycling-container > .vertical-division {
+  width: 1px;
+  background-color: var(--dark-green);
+}
+
+.main > .recycling-container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%;
+}
+
+.main > .recycling-container > form > input {
   font-family: "Lato", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 14px;
   
+  width: 100%;
+  box-sizing: border-box;
   padding: 12px;
   border-radius: 15px;
   border: none;
 }
 
-.main > form > .buttons-container {
+.main > .recycling-container > form > .buttons-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main > form > .buttons-container > button {
+.main > .recycling-container > form > .buttons-container > button {
   font-family: "Lato", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -68,11 +100,11 @@
   transition: box-shadow .2s ease-in-out;
 }
 
-.main > form > .buttons-container > button:hover {
+.main > .recycling-container > form > .buttons-container > button:hover {
   box-shadow: 0px 0px 10px 0px #d8ef9f94;
 }
 
-.main > form > .buttons-container > a {
+.main > .recycling-container > form > .buttons-container > a {
   font-family: "Lato", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -81,20 +113,31 @@
   color: var(--grass-green);
 }
 
-@media screen and (max-height: 600px) {
-  .main.register {
-    height: auto;
+@media screen and (max-width: 600px) {
+  .main > .recycling-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .main > .recycling-container > .recycling-info-container > img {
+    display: none;
+  }
+
+  .main > .recycling-container > form, .main > .recycling-container > .recycling-info-container {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 499px) {
   .main {
     padding-inline: 20px;
+    height: auto;
   }
   .main > h1 {
     font-size: 30px;
   }
-  .main > form {
-    padding: 40px 30px;
+  .main > .recycling-container {
+    padding: 30px 20px;
   }
 }

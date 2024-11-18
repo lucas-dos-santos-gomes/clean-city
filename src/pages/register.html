@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/login.css">
   <title>Cadastre-se</title>
-  <script src="../scripts/config.js" type="module"></script>
   <script src="../scripts/check-creds.js"></script>
 </head>
 <body>
@@ -71,14 +70,18 @@
       <input type="text" id="name" placeholder="Nome completo:" required />
       <input type="email" id="email" placeholder="E-mail:" required />
       <input type="password" id="password" placeholder="Senha:" required />
-      <input type="password" placeholder="Confirmar senha:" required />
+      <input type="password" id="confirm-password" placeholder="Confirmar senha:" required />
       <div class="buttons-container">
         <button>Registrar</button>
         <a href="./login.html">Entrar em uma Conta</a>
       </div>
     </form>
   </main>
+
+  <div class="loading"></div>
+  
   <script src="../scripts/hamburguer-menu.js"></script>
+  <script type="module" src="../scripts/loading.js"></script>
   <script type="module" src="../scripts/register.js"></script>
 </body>
 </html>

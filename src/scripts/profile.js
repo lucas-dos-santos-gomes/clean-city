@@ -2,7 +2,13 @@ import {
   get,
   child,
   dbref,
+  auth,
+  signOut,
+  signout,
+  verifyUser,
 } from "./config.js";
+
+verifyUser(true);
 
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
@@ -29,10 +35,9 @@ get(child(dbref, 'users/' + uid + '/reports')).then(snapshot => {
 const logoutButton = document.querySelector('.logout');
 
 function logout() {
-  sessionStorage.removeItem('user-info');
-  sessionStorage.removeItem('user-creds');
   alert('Você saiu da sua conta!');
-  window.location.href = '/src/pages/login.html';
+  signout();
+  location.reload(true);
 }
 
 logoutButton.onclick = logout;
