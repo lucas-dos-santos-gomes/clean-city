@@ -42,7 +42,7 @@ function signup(submit) {
     turnInputs();
     main.removeChild(form);
 
-    await fetch('http://localhost:3000/users/673b1ddda5e291d7f5ae5699', {
+    await fetch('http://localhost:3000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

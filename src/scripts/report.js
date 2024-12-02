@@ -28,7 +28,7 @@ window.onload = () => {
 
 const form = document.querySelector('form');
 
-form.onsubmit = e => {
+form.onsubmit = async e => {
   e.preventDefault();
   const uid = JSON.parse(sessionStorage.getItem('user-creds')).uid;
 
@@ -43,6 +43,19 @@ form.onsubmit = e => {
     second: '2-digit',
   });
   // const finalFormattedDate = formattedDate.replace(',', '').replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3');
+
+  await fetch('http://localhost:3000/reports', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      local: locationInput.value.trim(),
+      description: descriptionInput.value.trim(),
+      userId: uid,
+      date: formattedDate,
+    })
+  }).then(res => res.json()).then(data => console.log(data));
 
   set(ref(db, `users/${uid}/reports/${gerarIdAleatorio()}`), {
     location: locationInput.value.trim(),
