@@ -42,7 +42,7 @@ function signup(submit) {
     turnInputs();
     main.removeChild(form);
 
-    await fetch('http://localhost:3000/users', {
+    await fetch('https://api-clean-city-production.up.railway.app/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

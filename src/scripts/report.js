@@ -44,7 +44,7 @@ form.onsubmit = async e => {
   });
   // const finalFormattedDate = formattedDate.replace(',', '').replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3');
 
-  await fetch('http://localhost:3000/reports', {
+  await fetch('https://api-clean-city-production.up.railway.app/reports', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
